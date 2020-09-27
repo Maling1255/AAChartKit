@@ -33,8 +33,10 @@
 #ifndef AAGlobalMacro_h
 #define AAGlobalMacro_h
 
-
+#define AACHARTKIT_STATIC_INLINE    static inline
 #define AAObject(objectName) [[objectName alloc]init]
+#define AARgbaColor(r,g,b,a) [NSString stringWithFormat:@"rgba(%d,%d,%d,%f)",r,g,b,a]
+#define AAJSFunc(x) #x
 
 
 #define AAPropStatementAndPropSetFuncStatement(propertyModifier,className, propertyPointerType, propertyName)           \
@@ -44,7 +46,15 @@
 #define AAPropSetFuncImplementation(className, propertyPointerType, propertyName)                                       \
 - (className * (^) (propertyPointerType propertyName))propertyName##Set{                                                \
 return ^(propertyPointerType propertyName) {                                                                            \
-_##propertyName = propertyName;                                                                                         \
+self->_##propertyName = propertyName;                                                                                   \
+return self;                                                                                                            \
+};                                                                                                                      \
+}
+
+#define AAJSFuncTypePropSetFuncImplementation(className, propertyPointerType, propertyName)                             \
+- (className * (^) (propertyPointerType propertyName))propertyName##Set{                                                \
+return ^(propertyPointerType propertyName) {                                                                            \
+self->_##propertyName = [propertyName aa_toPureJSString];                                                               \
 return self;                                                                                                            \
 };                                                                                                                      \
 }

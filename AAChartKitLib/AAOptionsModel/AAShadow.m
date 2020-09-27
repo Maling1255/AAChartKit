@@ -1,9 +1,9 @@
 //
-//  AAColor.m
-//  AAChartKitDemo
+//  AAShadow.m
+//  AAChartKit-ProDemo
 //
-//  Created by AnAn on 2018/11/19.
-//  Copyright © 2018 Danny boy. All rights reserved.
+//  Created by AnAn on 2020/7/16.
+//  Copyright © 2020 Danny boy. All rights reserved.
 //*************** ...... SOURCE CODE ...... ***************
 //***...................................................***
 //*** https://github.com/AAChartModel/AAChartKit        ***
@@ -30,68 +30,14 @@
  
  */
 
-#import "AAColor.h"
+#import "AAShadow.h"
 
-@implementation AAColor
+@implementation AAShadow : NSObject
 
-+ (NSString *)blackColor {
-    return @"black";
-};
-
-+ (NSString *)darkGrayColor {
-    return @"darkGray";
-};
-
-+ (NSString *)lightGrayColor {
-    return @"lightGray";
-};
-
-+ (NSString *)whiteColor {
-    return @"white";
-};
-
-+ (NSString *)grayColor {
-    return @"gray";
-};
-
-+ (NSString *)redColor {
-    return @"red";
-};
-
-+ (NSString *)greenColor {
-    return @"green";
-};
-
-+ (NSString *)blueColor {
-    return @"blue";
-};
-
-+ (NSString *)cyanColor {
-    return @"cyan";
-};
-
-+ (NSString *)yellowColor {
-    return @"yellow";
-};
-
-+ (NSString *)magentaColor {
-    return @"magenta";
-};
-
-+ (NSString *)orangeColor {
-    return @"orange";
-};
-
-+ (NSString *)purpleColor {
-    return @"purple";
-};
-
-+ (NSString *)brownColor {
-    return @"brown";
-};
-
-+ (NSString *)clearColor {
-    return @"#00000000";
-};
+AAPropSetFuncImplementation(AAShadow, NSString *, color)
+AAPropSetFuncImplementation(AAShadow, NSNumber *, offsetX)
+AAPropSetFuncImplementation(AAShadow, NSNumber *, offsetY)
+AAPropSetFuncImplementation(AAShadow, NSNumber *, opacity)
+AAPropSetFuncImplementation(AAShadow, NSNumber *, width)
 
 @end

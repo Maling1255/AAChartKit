@@ -1,10 +1,10 @@
 //
-//  AALine.h
-//  AAChartKit
+//  AALang.m
+//  AAChartKitDemo
 //
-//  Created by An An on 17/1/6.
-//  Copyright © 2017年 An An. All rights reserved.
-//*************** ...... SOURCE CODE ...... ***************
+//  Created by AnAn on 2020/7/17.
+//  Copyright © 2020 AnAn. All rights reserved.
+
 //***...................................................***
 //*** https://github.com/AAChartModel/AAChartKit        ***
 //*** https://github.com/AAChartModel/AAChartKit-Swift  ***
@@ -30,15 +30,11 @@
  
  */
 
-#import <Foundation/Foundation.h>
+#import "AALang.h"
 
-@class AADataLabels, AAStates;
+@implementation AALang
 
-@interface AALine : NSObject
-
-AAPropStatementAndPropSetFuncStatement(strong, AALine, NSNumber     *, lineWidth) //设置折线的宽度
-AAPropStatementAndPropSetFuncStatement(strong, AALine, AADataLabels *, dataLabels) 
-AAPropStatementAndPropSetFuncStatement(copy,   AALine, NSString *, dashStyle) //折线的样式类型
-AAPropStatementAndPropSetFuncStatement(strong, AALine, AAStates *, states)
+AAPropSetFuncImplementation(AALang, NSString    *, resetZoom)
+AAPropSetFuncImplementation(AALang, NSString    *, thousandsSep)
 
 @end

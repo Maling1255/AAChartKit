@@ -1,15 +1,17 @@
 //
-//  Subtitle.h
-//  AAChartKit
+//  AAPane.m
+//  AAChartKitDemo
 //
-//  Created by An An on 17/1/5.
-//  Copyright © 2017年 An An. All rights reserved.
+//  Created by AnAn on 2020/5/9.
+//  Copyright © 2020 An An. All rights reserved.
+//
 //*************** ...... SOURCE CODE ...... ***************
 //***...................................................***
 //*** https://github.com/AAChartModel/AAChartKit        ***
 //*** https://github.com/AAChartModel/AAChartKit-Swift  ***
 //***...................................................***
 //*************** ...... SOURCE CODE ...... ***************
+//
 
 /*
  
@@ -30,14 +32,27 @@
  
  */
 
-#import <Foundation/Foundation.h>
+#import "AAPane.h"
 
-@class AAStyle;
+@implementation AAPane
 
-@interface AASubtitle : NSObject
+AAPropSetFuncImplementation(AAPane, AABackground *, background)
+AAPropSetFuncImplementation(AAPane, NSArray  *, center)
+AAPropSetFuncImplementation(AAPane, NSNumber *, endAngle)
+AAPropSetFuncImplementation(AAPane, NSNumber *, size)
+AAPropSetFuncImplementation(AAPane, NSNumber *, startAngle)
 
-AAPropStatementAndPropSetFuncStatement(copy,   AASubtitle, NSString *, text) 
-AAPropStatementAndPropSetFuncStatement(copy,   AASubtitle, NSString *, align) 
-AAPropStatementAndPropSetFuncStatement(strong, AASubtitle, AAStyle  *, style) 
+@end
+
+
+@implementation AABackground
+
+AAPropSetFuncImplementation(AABackground, NSString *, backgroundColor)
+AAPropSetFuncImplementation(AABackground, NSString *, borderColor)
+AAPropSetFuncImplementation(AABackground, NSNumber *, borderWidth)
+AAPropSetFuncImplementation(AABackground, NSString *, className)
+AAPropSetFuncImplementation(AABackground, NSNumber *, innerRadius)
+AAPropSetFuncImplementation(AABackground, NSNumber *, outerRadius)
+AAPropSetFuncImplementation(AABackground, NSString *, shape)
 
 @end

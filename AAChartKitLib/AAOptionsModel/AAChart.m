@@ -41,10 +41,35 @@ AAPropSetFuncImplementation(AAChart, NSString    *, pinchType)
 AAPropSetFuncImplementation(AAChart, BOOL ,         panning) 
 //AAPropSetFuncImplementation(AAChart, NSString    *, panKey) 
 AAPropSetFuncImplementation(AAChart, BOOL ,         polar) 
-AAPropSetFuncImplementation(AAChart, AAOptions3d *, options3d) 
 AAPropSetFuncImplementation(AAChart, AAAnimation *, animation) 
-AAPropSetFuncImplementation(AAChart, BOOL ,         inverted) 
+AAPropSetFuncImplementation(AAChart, BOOL ,         inverted)
+AAPropSetFuncImplementation(AAChart, NSArray     *, margin)//  图表外边缘和绘图区域之间的边距。 数组中的数字分别表示顶部，右侧，底部和左侧。 也可以使用 marginTop，marginRight，marginBottom 和 marginLeft 来设置某一个方向的边距。
+AAPropSetFuncImplementation(AAChart, NSNumber    *, marginTop)
+AAPropSetFuncImplementation(AAChart, NSNumber    *, marginRight)
+AAPropSetFuncImplementation(AAChart, NSNumber    *, marginBottom)
 AAPropSetFuncImplementation(AAChart, NSNumber    *, marginLeft) 
-AAPropSetFuncImplementation(AAChart, NSNumber    *, marginRight) 
+AAPropSetFuncImplementation(AAChart, AAScrollablePlotArea *, scrollablePlotArea)
+AAPropSetFuncImplementation(AAChart, AAResetZoomButton *, resetZoomButton)
+
+@end
+
+
+//Refer to online API document: https://api.highcharts.com/highcharts/chart.scrollablePlotArea
+@implementation AAScrollablePlotArea
+
+AAPropSetFuncImplementation(AAScrollablePlotArea, NSNumber *, minHeight)
+AAPropSetFuncImplementation(AAScrollablePlotArea, NSNumber *, minWidth)
+AAPropSetFuncImplementation(AAScrollablePlotArea, NSNumber *, opacity)
+AAPropSetFuncImplementation(AAScrollablePlotArea, NSNumber *, scrollPositionX)
+AAPropSetFuncImplementation(AAScrollablePlotArea, NSNumber *, scrollPositionY)
+
+@end
+
+
+@implementation AAResetZoomButton
+
+AAPropSetFuncImplementation(AAResetZoomButton, AAPosition   *, position)
+AAPropSetFuncImplementation(AAResetZoomButton, NSString     *, relativeTo)
+AAPropSetFuncImplementation(AAResetZoomButton, NSDictionary *, theme)
 
 @end

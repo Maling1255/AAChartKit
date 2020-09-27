@@ -33,6 +33,7 @@
 #import <Foundation/Foundation.h>
 @class AALabel;
 
+// 指示线
 @interface AAPlotLinesElement : NSObject
 
 AAPropStatementAndPropSetFuncStatement(copy,   AAPlotLinesElement, NSString *, color) //基线颜色

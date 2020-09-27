@@ -7,7 +7,8 @@
 //
 //*************** ...... SOURCE CODE ...... ***************
 //***...................................................***
-//***    https://github.com/AAChartModel/AAChartKit     ***
+//*** https://github.com/AAChartModel/AAChartKit        ***
+//*** https://github.com/AAChartModel/AAChartKit-Swift  ***
 //***...................................................***
 //*************** ...... SOURCE CODE ...... ***************
 //
@@ -32,18 +33,38 @@
  */
 
 #import "AALegend.h"
-
+                
 @implementation AALegend
 
-AAPropSetFuncImplementation(AALegend, AALegendLayoutType,        layout) 
-AAPropSetFuncImplementation(AALegend, AALegendAlignType,         align) 
-AAPropSetFuncImplementation(AALegend, AALegendVerticalAlignType, verticalAlign) 
+AAPropSetFuncImplementation(AALegend, AAChartLayoutType,        layout)
+AAPropSetFuncImplementation(AALegend, AAChartAlignType,         align)
+AAPropSetFuncImplementation(AALegend, AAChartVerticalAlignType, verticalAlign)
 AAPropSetFuncImplementation(AALegend, BOOL,          enabled) 
 AAPropSetFuncImplementation(AALegend, NSString    *, borderColor) 
 AAPropSetFuncImplementation(AALegend, NSNumber    *, borderWidth) 
-AAPropSetFuncImplementation(AALegend, NSNumber    *, itemMarginTop) 
-AAPropSetFuncImplementation(AALegend, AAItemStyle *, itemStyle) 
+AAPropSetFuncImplementation(AALegend, NSNumber    *, itemMarginTop)
+AAPropSetFuncImplementation(AALegend, NSNumber    *, itemMarginBottom)
+AAPropSetFuncImplementation(AALegend, AAItemStyle *, itemStyle)
+AAPropSetFuncImplementation(AALegend, NSNumber    *, symbolHeight)//标志高度
+AAPropSetFuncImplementation(AALegend, NSNumber    *, symbolPadding)//标志后距
+AAPropSetFuncImplementation(AALegend, NSNumber    *, symbolRadius)//图标圆角
+AAPropSetFuncImplementation(AALegend, NSNumber    *, symbolWidth)//图标宽度
 AAPropSetFuncImplementation(AALegend, NSNumber    *, x) 
-AAPropSetFuncImplementation(AALegend, NSNumber    *, y) 
+AAPropSetFuncImplementation(AALegend, NSNumber    *, y)
+AAPropSetFuncImplementation(AALegend, BOOL,          floating)
+
+AAPropSetFuncImplementation(AALegend, BOOL,          reversed) // maling  逆序
+AAPropSetFuncImplementation(AALegend, BOOL,          rtl) // maling  左右交换
+
+@end
+
+
+
+@implementation AAItemStyle
+
+AAPropSetFuncImplementation(AAItemStyle, NSString *, color)
+AAPropSetFuncImplementation(AAItemStyle, NSString *, cursor)
+AAPropSetFuncImplementation(AAItemStyle, NSString *, fontSize)
+AAPropSetFuncImplementation(AAItemStyle, NSString *, fontWeight)
 
 @end

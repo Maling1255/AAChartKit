@@ -1,9 +1,9 @@
 //
-//  AALine.h
-//  AAChartKit
+//  AAShadow.h
+//  AAChartKit-ProDemo
 //
-//  Created by An An on 17/1/6.
-//  Copyright © 2017年 An An. All rights reserved.
+//  Created by AnAn on 2020/7/16.
+//  Copyright © 2020 Danny boy. All rights reserved.
 //*************** ...... SOURCE CODE ...... ***************
 //***...................................................***
 //*** https://github.com/AAChartModel/AAChartKit        ***
@@ -32,13 +32,16 @@
 
 #import <Foundation/Foundation.h>
 
-@class AADataLabels, AAStates;
+NS_ASSUME_NONNULL_BEGIN
 
-@interface AALine : NSObject
+@interface AAShadow : NSObject
 
-AAPropStatementAndPropSetFuncStatement(strong, AALine, NSNumber     *, lineWidth) //设置折线的宽度
-AAPropStatementAndPropSetFuncStatement(strong, AALine, AADataLabels *, dataLabels) 
-AAPropStatementAndPropSetFuncStatement(copy,   AALine, NSString *, dashStyle) //折线的样式类型
-AAPropStatementAndPropSetFuncStatement(strong, AALine, AAStates *, states)
+AAPropStatementAndPropSetFuncStatement(copy,   AAShadow, NSString *, color)
+AAPropStatementAndPropSetFuncStatement(strong, AAShadow, NSNumber *, offsetX)
+AAPropStatementAndPropSetFuncStatement(strong, AAShadow, NSNumber *, offsetY)
+AAPropStatementAndPropSetFuncStatement(strong, AAShadow, NSNumber *, opacity)
+AAPropStatementAndPropSetFuncStatement(strong, AAShadow, NSNumber *, width)
 
 @end
+
+NS_ASSUME_NONNULL_END

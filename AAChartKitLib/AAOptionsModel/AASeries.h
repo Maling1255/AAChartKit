@@ -7,7 +7,8 @@
 //
 //*************** ...... SOURCE CODE ...... ***************
 //***...................................................***
-//***    https://github.com/AAChartModel/AAChartKit     ***
+//*** https://github.com/AAChartModel/AAChartKit        ***
+//*** https://github.com/AAChartModel/AAChartKit-Swift  ***
 //***...................................................***
 //*************** ...... SOURCE CODE ...... ***************
 //
@@ -33,7 +34,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class AAMarker,AAAnimation;
+@class AAMarker, AAAnimation, AAShadow, AADataLabels, AAEvents, AAStates, AAPoint;
 
 @interface AASeries : NSObject
 
@@ -47,6 +48,44 @@ AAPropStatementAndPropSetFuncStatement(strong, AASeries, NSArray      *, keys)
 //plotOptions.series.connectNulls
 //https://www.zhihu.com/question/24173311
 AAPropStatementAndPropSetFuncStatement(assign, AASeries, BOOL ,          connectNulls) //设置折线是否断点重连
-AAPropStatementAndPropSetFuncStatement(strong, AASeries, NSDictionary *, events) 
+AAPropStatementAndPropSetFuncStatement(strong, AASeries, AAEvents *, events)
+AAPropStatementAndPropSetFuncStatement(strong, AASeries, AAShadow *, shadow)
+AAPropStatementAndPropSetFuncStatement(strong, AASeries, AADataLabels *, dataLabels)
+AAPropStatementAndPropSetFuncStatement(strong, AASeries, AAStates *, states)
+AAPropStatementAndPropSetFuncStatement(strong, AASeries, AAPoint  *, point)
+AAPropStatementAndPropSetFuncStatement(strong, AASeries, NSNumber *, borderRadiusTopLeft)
+AAPropStatementAndPropSetFuncStatement(strong, AASeries, NSNumber *, borderRadiusTopRight)
+AAPropStatementAndPropSetFuncStatement(strong, AASeries, NSNumber *, borderRadiusBottomLeft)
+AAPropStatementAndPropSetFuncStatement(strong, AASeries, NSNumber *, borderRadiusBottomRight)
 
 @end
+
+
+@interface AAEvents : NSObject
+
+AAPropStatementAndPropSetFuncStatement(copy, AAEvents, NSString *, legendItemClick)
+
+@end
+
+
+@class AAPointEvents;
+
+@interface AAPoint : NSObject
+
+AAPropStatementAndPropSetFuncStatement(strong, AAPoint, AAPointEvents *, events)
+
+@end
+
+
+@interface AAPointEvents : NSObject
+
+AAPropStatementAndPropSetFuncStatement(copy, AAPointEvents, NSString *, click) //点击事件
+AAPropStatementAndPropSetFuncStatement(copy, AAPointEvents, NSString *, mouseOut) //鼠标划出
+AAPropStatementAndPropSetFuncStatement(copy, AAPointEvents, NSString *, mouseOver) //鼠标划过
+AAPropStatementAndPropSetFuncStatement(copy, AAPointEvents, NSString *, remove) //删除
+AAPropStatementAndPropSetFuncStatement(copy, AAPointEvents, NSString *, select) //选中
+AAPropStatementAndPropSetFuncStatement(copy, AAPointEvents, NSString *, unselect) //取消选中
+AAPropStatementAndPropSetFuncStatement(copy, AAPointEvents, NSString *, update) //更新
+
+@end
+

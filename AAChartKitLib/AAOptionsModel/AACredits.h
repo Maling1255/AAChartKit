@@ -1,9 +1,9 @@
 //
-//  AALine.h
-//  AAChartKit
+//  AACredits.h
+//  AAChartKitDemo
 //
-//  Created by An An on 17/1/6.
-//  Copyright © 2017年 An An. All rights reserved.
+//  Created by AnAn on 2020/7/17.
+//  Copyright © 2020 AnAn. All rights reserved.
 //*************** ...... SOURCE CODE ...... ***************
 //***...................................................***
 //*** https://github.com/AAChartModel/AAChartKit        ***
@@ -32,13 +32,28 @@
 
 #import <Foundation/Foundation.h>
 
-@class AADataLabels, AAStates;
+NS_ASSUME_NONNULL_BEGIN
 
-@interface AALine : NSObject
+@class AAPosition, AAStyle;
 
-AAPropStatementAndPropSetFuncStatement(strong, AALine, NSNumber     *, lineWidth) //设置折线的宽度
-AAPropStatementAndPropSetFuncStatement(strong, AALine, AADataLabels *, dataLabels) 
-AAPropStatementAndPropSetFuncStatement(copy,   AALine, NSString *, dashStyle) //折线的样式类型
-AAPropStatementAndPropSetFuncStatement(strong, AALine, AAStates *, states)
+@interface AACredits : NSObject
+
+AAPropStatementAndPropSetFuncStatement(assign, AACredits, BOOL,          enabled)
+AAPropStatementAndPropSetFuncStatement(copy,   AACredits, NSString    *, href)
+AAPropStatementAndPropSetFuncStatement(strong, AACredits, AAPosition  *, position)
+AAPropStatementAndPropSetFuncStatement(strong, AACredits, AAStyle     *, style)
+AAPropStatementAndPropSetFuncStatement(copy,   AACredits, NSString    *, text)
 
 @end
+
+
+@interface AAPosition : NSObject
+
+AAPropStatementAndPropSetFuncStatement(copy,   AAPosition, NSString    *, align)
+AAPropStatementAndPropSetFuncStatement(copy,   AAPosition, NSString    *, verticalAlign)
+AAPropStatementAndPropSetFuncStatement(strong, AAPosition, NSNumber    *, x)
+AAPropStatementAndPropSetFuncStatement(strong, AAPosition, NSNumber    *, y)
+
+@end
+
+NS_ASSUME_NONNULL_END

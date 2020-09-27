@@ -1,10 +1,10 @@
 //
-//  Subtitle.m
-//  AAChartKit
+//  AALang.h
+//  AAChartKitDemo
 //
-//  Created by An An on 17/1/5.
-//  Copyright © 2017年 An An. All rights reserved.
-//*************** ...... SOURCE CODE ...... ***************
+//  Created by AnAn on 2020/7/17.
+//  Copyright © 2020 AnAn. All rights reserved.
+
 //***...................................................***
 //*** https://github.com/AAChartModel/AAChartKit        ***
 //*** https://github.com/AAChartModel/AAChartKit-Swift  ***
@@ -30,12 +30,15 @@
  
  */
 
-#import "AASubtitle.h"
+#import <Foundation/Foundation.h>
 
-@implementation AASubtitle
+NS_ASSUME_NONNULL_BEGIN
 
-AAPropSetFuncImplementation(AASubtitle, NSString *, text) 
-AAPropSetFuncImplementation(AASubtitle, NSString *, align) 
-AAPropSetFuncImplementation(AASubtitle, AAStyle  *, style) 
+@interface AALang : NSObject
+
+AAPropStatementAndPropSetFuncStatement(copy,   AALang, NSString    *, resetZoom)
+AAPropStatementAndPropSetFuncStatement(copy,   AALang, NSString    *, thousandsSep)
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -1,9 +1,9 @@
 //
-//  AALine.h
-//  AAChartKit
+//  NSString+toPureJSString.h
+//  AAChartKitDemo
 //
-//  Created by An An on 17/1/6.
-//  Copyright © 2017年 An An. All rights reserved.
+//  Created by AnAn on 2020/8/11.
+//  Copyright © 2020 Danny boy. All rights reserved.
 //*************** ...... SOURCE CODE ...... ***************
 //***...................................................***
 //*** https://github.com/AAChartModel/AAChartKit        ***
@@ -19,7 +19,7 @@
  *
  * Please contact me on GitHub,if there are any problems encountered in use.
  * GitHub Issues : https://github.com/AAChartModel/AAChartKit/issues
- * -------------------------------------------------------------------------------
+ * ------------------------------------------------------------------------------
  * And if you want to contribute for this project, please contact me as well
  * GitHub        : https://github.com/AAChartModel
  * StackOverflow : https://stackoverflow.com/users/7842508/codeforu
@@ -32,13 +32,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class AADataLabels, AAStates;
+NS_ASSUME_NONNULL_BEGIN
 
-@interface AALine : NSObject
+@interface NSString (pureJSString)
 
-AAPropStatementAndPropSetFuncStatement(strong, AALine, NSNumber     *, lineWidth) //设置折线的宽度
-AAPropStatementAndPropSetFuncStatement(strong, AALine, AADataLabels *, dataLabels) 
-AAPropStatementAndPropSetFuncStatement(copy,   AALine, NSString *, dashStyle) //折线的样式类型
-AAPropStatementAndPropSetFuncStatement(strong, AALine, AAStates *, states)
+- (NSString *)aa_toPureJSString;
 
 @end
+
+NS_ASSUME_NONNULL_END

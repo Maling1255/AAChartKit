@@ -1,15 +1,17 @@
 //
-//  AAGradientColor.h
+//  AAPane.h
 //  AAChartKitDemo
 //
-//  Created by AnAn on 2018/11/18.
-//  Copyright © 2018 Danny boy. All rights reserved.
+//  Created by AnAn on 2020/5/9.
+//  Copyright © 2020 An An. All rights reserved.
+//
 //*************** ...... SOURCE CODE ...... ***************
 //***...................................................***
 //*** https://github.com/AAChartModel/AAChartKit        ***
 //*** https://github.com/AAChartModel/AAChartKit-Swift  ***
 //***...................................................***
 //*************** ...... SOURCE CODE ...... ***************
+//
 
 /*
  
@@ -31,38 +33,30 @@
  */
 
 #import <Foundation/Foundation.h>
-
+@class AABackground;
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AAGradientColor : NSObject
+@interface AAPane : NSObject
 
-+ (NSDictionary *)oceanBlueColor;
-+ (NSDictionary *)sanguineColor;
-+ (NSDictionary *)lusciousLimeColor;
-+ (NSDictionary *)purpleLakeColor;
-+ (NSDictionary *)freshPapayaColor;
-+ (NSDictionary *)ultramarineColor;
-+ (NSDictionary *)pinkSugarColor;
-+ (NSDictionary *)lemonDrizzleColor;
-+ (NSDictionary *)victoriaPurpleColor;
-+ (NSDictionary *)springGreensColor;
-+ (NSDictionary *)mysticMauveColor;
-+ (NSDictionary *)reflexSilverColor;
-+ (NSDictionary *)neonGlowColor;
-+ (NSDictionary *)berrySmoothieColor;
-+ (NSDictionary *)newLeafColor;
-+ (NSDictionary *)cottonCandyColor;
-+ (NSDictionary *)pixieDustColor;
-+ (NSDictionary *)fizzyPeachColor;
-+ (NSDictionary *)sweetDreamColor;
-+ (NSDictionary *)firebrickColor;
-+ (NSDictionary *)wroughtIronColor;
-+ (NSDictionary *)deepSeaColor;
-+ (NSDictionary *)coastalBreezeColor;
-+ (NSDictionary *)eveningDelightColor;
+AAPropStatementAndPropSetFuncStatement(strong, AAPane, AABackground *, background)
+AAPropStatementAndPropSetFuncStatement(strong, AAPane, NSArray  *, center)
+AAPropStatementAndPropSetFuncStatement(strong, AAPane, NSNumber *, endAngle)
+AAPropStatementAndPropSetFuncStatement(strong, AAPane, NSNumber *, size)
+AAPropStatementAndPropSetFuncStatement(strong, AAPane, NSNumber *, startAngle)
+
+@end
+
+
+@interface AABackground : NSObject
+
+AAPropStatementAndPropSetFuncStatement(copy  , AABackground, NSString *, backgroundColor)
+AAPropStatementAndPropSetFuncStatement(copy  , AABackground, NSString *, borderColor)
+AAPropStatementAndPropSetFuncStatement(strong, AABackground, NSNumber *, borderWidth)
+AAPropStatementAndPropSetFuncStatement(copy  , AABackground, NSString *, className)
+AAPropStatementAndPropSetFuncStatement(strong, AABackground, NSNumber *, innerRadius)
+AAPropStatementAndPropSetFuncStatement(strong, AABackground, NSNumber *, outerRadius)
+AAPropStatementAndPropSetFuncStatement(copy  , AABackground, NSString *, shape)
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-

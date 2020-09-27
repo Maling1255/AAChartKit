@@ -1,9 +1,9 @@
 //
-//  AAItemStyle.h
-//  AAChartKit
+//  AAMarginConvenience.h
+//  AAChartKitDemo
 //
-//  Created by An An on 17/1/19.
-//  Copyright © 2017年 An An. All rights reserved.
+//  Created by An An on 2020/7/24.
+//  Copyright © 2020 An An. All rights reserved.
 //*************** ...... SOURCE CODE ...... ***************
 //***...................................................***
 //*** https://github.com/AAChartModel/AAChartKit        ***
@@ -22,7 +22,7 @@
  * -------------------------------------------------------------------------------
  * And if you want to contribute for this project, please contact me as well
  * GitHub        : https://github.com/AAChartModel
- * StackOverflow : https://stackoverflow.com/users/7842508/codeforu
+ * StackOverflow : https://stackoverflow.com/users/12302132/codeforu
  * JianShu       : https://www.jianshu.com/u/f1e6753d4254
  * SegmentFault  : https://segmentfault.com/u/huanghunbieguan
  *
@@ -30,14 +30,32 @@
  
  */
 
-#import <Foundation/Foundation.h>
+#ifndef AAMarginConvenience_h
+#define AAMarginConvenience_h
 
-@interface AAItemStyle : NSObject
+AACHARTKIT_STATIC_INLINE
+NSArray * AAMargin(float marginTop,
+                   float marginRight,
+                   float marginBottom,
+                   float marginLeft) {
+    return @[
+        @(marginTop),
+        @(marginRight),
+        @(marginBottom),
+        @(marginLeft)
+    ];
+}
 
-AAPropStatementAndPropSetFuncStatement(copy, AAItemStyle, NSString *, color) 
-AAPropStatementAndPropSetFuncStatement(copy, AAItemStyle, NSString *, cursor) 
-AAPropStatementAndPropSetFuncStatement(copy, AAItemStyle, NSString *, pointer) 
-AAPropStatementAndPropSetFuncStatement(copy, AAItemStyle, NSString *, fontSize) 
-AAPropStatementAndPropSetFuncStatement(copy, AAItemStyle, NSString *, fontWeight) 
+AACHARTKIT_STATIC_INLINE
+NSArray * AAMarginTopBottom(float marginTop,
+                            float marginBottom) {
+    return AAMargin(marginTop, 0, marginBottom, 0);
+}
 
-@end
+AACHARTKIT_STATIC_INLINE
+NSArray * AAMarginLeftRight(float marginLeft,
+                            float marginRight) {
+    return AAMargin(0, marginRight, 0, marginLeft);
+}
+
+#endif /* AAMarginConvenience_h */

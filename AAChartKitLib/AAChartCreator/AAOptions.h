@@ -36,7 +36,6 @@
 #import "AAChart.h"
 #import "AAAnimation.h"
 #import "AATitle.h"
-#import "AASubtitle.h"
 #import "AAXAxis.h"
 #import "AAYAxis.h"
 #import "AAPlotBandsElement.h"
@@ -56,9 +55,17 @@
 #import "AADataLabels.h"
 #import "AAStyle.h"
 #import "AASeries.h"
+#import "AAShadow.h"
 #import "AAMarker.h"
 #import "AAGradientColor.h"
 #import "AAColor.h"
+#import "AAStates.h"
+#import "AAPane.h"
+#import "AACredits.h"
+#import "AALang.h"
+#import "NSArray+toJSArray.h"
+#import "AAStyleConvenience.h"
+#import "AAMarginConvenience.h"
 
 @interface AAOptions : NSObject
 
@@ -70,19 +77,20 @@ AAPropStatementAndPropSetFuncStatement(strong, AAOptions, AAYAxis       *, yAxis
 AAPropStatementAndPropSetFuncStatement(strong, AAOptions, AATooltip     *, tooltip) 
 AAPropStatementAndPropSetFuncStatement(strong, AAOptions, AAPlotOptions *, plotOptions) 
 AAPropStatementAndPropSetFuncStatement(strong, AAOptions, NSArray       *, series) 
-AAPropStatementAndPropSetFuncStatement(strong, AAOptions, AALegend      *, legend) 
-AAPropStatementAndPropSetFuncStatement(strong, AAOptions, NSArray       *, colors) 
-AAPropStatementAndPropSetFuncStatement(assign, AAOptions, BOOL,            gradientColorEnabled) 
-AAPropStatementAndPropSetFuncStatement(copy,   AAOptions, NSString      *, zoomResetButtonText)  //String to display in 'zoom reset button"
+AAPropStatementAndPropSetFuncStatement(strong, AAOptions, AALegend      *, legend)
+AAPropStatementAndPropSetFuncStatement(strong, AAOptions, AAPane        *, pane)
+AAPropStatementAndPropSetFuncStatement(strong, AAOptions, NSArray       *, colors)
+AAPropStatementAndPropSetFuncStatement(strong, AAOptions, AACredits     *, credits)
+AAPropStatementAndPropSetFuncStatement(strong, AAOptions, AALang        *, defaultOptions)
+AAPropStatementAndPropSetFuncStatement(assign, AAOptions, BOOL           , touchEventEnabled)
 
+AAPropStatementAndPropSetFuncStatement(strong, AAOptions, AALabels      *, labels)  // maling 标签
 @end
-
 
 
 #import "AAChartModel.h"
 
 @interface AAOptionsConstructor : NSObject
-
 
 /**
  Configure the chart content and style
@@ -94,3 +102,12 @@ AAPropStatementAndPropSetFuncStatement(copy,   AAOptions, NSString      *, zoomR
 
 
 @end
+
+
+@interface AAChartModel (toAAOptions)
+
+- (AAOptions *)aa_toAAOptions;
+
+@end
+
+
